@@ -22,7 +22,7 @@ ukazka z controlleru
 @AllArgsConstructor
 public class UserDetailController {
 
-    private final UserDetailServiceImpl userDetailService;
+    private final UserDetailService userDetailService;
 	
 	@PostMapping("/register")
     @ResponseStatus(HttpStatus.CREATED)
