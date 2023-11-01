@@ -17,7 +17,7 @@ ____________________________________________
 
 ukazka z controlleru
 
-@RestController
+```@RestController
 @RequestMapping("/user")
 @AllArgsConstructor
 public class UserDetailController {
@@ -31,7 +31,6 @@ public class UserDetailController {
                 .onErrorResume(error -> Mono.error(new ResponseStatusException(HttpStatus.BAD_REQUEST,
                         "Failed to create user with reason -> " + error.getMessage())));
     }
-	
 	.....
 _______________________________________________
 	
