@@ -1,6 +1,6 @@
 struktura vypda nejak takto
 - main
-- -projekt
+- -java.projekt
   - -config
   - -controllers
   - -dtos
