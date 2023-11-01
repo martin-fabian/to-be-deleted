@@ -1,21 +1,18 @@
 struktura vypda nejak takto
 - main
-	-projekt
-	    -config
-		-controllers
-		-dtos
-		-entities
-		-enums
-		-interfaces
-		-services
-	    -util
-		.... atd
-	- resources
--test
-		....
-		
-		
-		
+- -projekt
+  - -config
+  - -controllers
+  - -dtos
+  - -entities
+  - -enums
+  - -interfaces
+  - -services
+  - -util
+  - -.... atd
+  - -resources
+- test
+- ....
 ____________________________________________
 
 ukazka z controlleru
@@ -36,84 +33,85 @@ public class UserDetailController {
     }
 	
 	.....
-	
-	_______________________________________________
+_______________________________________________
 	
 ukazka z dto
 
-@Data
-@ToString
-@AllArgsConstructor
-@Builder
-@NoArgsConstructor(force = true)
-public class UserDetailRequestDto {
-    private Integer id;
-    @NonNull
-    @Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", message = "Invalid email address")
-    private String email;
-    @NonNull
-    @Size(min = 5, message = "Password must have at least 5 characters")
-    private String password;
-    @NonNull
-    private String language;
-    @NonNull
-    private String version;
-}
+- @Data
+- @ToString
+- @AllArgsConstructor
+- @Builder
+- @NoArgsConstructor(force = true)
+- public class UserDetailRequestDto {
+    - private Integer id;
+    - @NonNull
+    - @Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", message = "Invalid email address")
+    - private String email;
+    - @NonNull
+    - @Size(min = 5, message = "Password must have at least 5 characters")
+    - private String password;
+    - @NonNull
+    - private String language;
+    - @NonNull
+    - private String version;
+- }
 
-@Data
-@ToString
-@AllArgsConstructor
-@NoArgsConstructor(force = true)
-public class UserDetailResponseDto {
-    @NonNull
-    private Integer id;
-    @NonNull
-    private String email;
-    private LocalDateTime createdAt;
-    private LocalDateTime modifiedAt;
-    @NonNull
-    private Integer activeEmails;
-    @NonNull
-    private String language;
-    @NonNull
-    private Integer languageId;
-    private PaymentResponseDto payment;
-    private String version;
-}
-
+- @Data
+- @ToString
+- @AllArgsConstructor
+- @NoArgsConstructor(force = true)
+- public class UserDetailResponseDto {
+    - @NonNull
+    - private Integer id;
+    - @NonNull
+    - private String email;
+    - private LocalDateTime createdAt;
+    - private LocalDateTime modifiedAt;
+    - @NonNull
+    - private Integer activeEmails;
+    - @NonNull
+    - private String language;
+    - @NonNull
+    - private Integer languageId;
+    - private PaymentResponseDto payment;
+    - private String version;
+- }
 __________________________________________________
+
 ukazka entity
-@Data
-@ToString
-@AllArgsConstructor
-@NoArgsConstructor(force = true)
-@EqualsAndHashCode(callSuper = true)
-@Table("user_detail")
-public class UserDetailEntity extends BaseEntity {
-    @Id
-    private Integer id;
-    @NonNull
-    private String email;
-    @NonNull
-    private String password;
-    @NonNull
-    @Column("is_active")
-    private Boolean isActive;
-   ....
-    @Column("active_emails")
-    private Integer activeEmails;
-  .....
-    @Column("language_id")
-    private Integer languageId;
-    @Column("currency_id")
-    private Integer currencyId;
-    @Column("version_id")
-    private Integer versionId;
-    @Column("show_message")
-    private Boolean showMessage;
-}
+
+- @Data
+- @ToString
+- @AllArgsConstructor
+- @NoArgsConstructor(force = true)
+- @EqualsAndHashCode(callSuper = true)
+- @Table("user_detail")
+- public class UserDetailEntity extends BaseEntity {
+    - @Id
+    - private Integer id;
+    - @NonNull
+    - private String email;
+    - @NonNull
+    - private String password;
+    - @NonNull
+    - @Column("is_active")
+    - private Boolean isActive;
+   - ....
+    - @Column("active_emails")
+    - private Integer activeEmails;
+  - .....
+    - @Column("language_id")
+    - private Integer languageId;
+    - @Column("currency_id")
+    - private Integer currencyId;
+    - @Column("version_id")
+    - private Integer versionId;
+    - @Column("show_message")
+    - private Boolean showMessage;
+- }
 
 _______________________________________________
+
 ukazka service
 
 @Service
@@ -151,6 +149,6 @@ public class UserDetailServiceImpl implements ReactiveUserDetailsService {
 	.....
 	
 	
-	___________________________________________
+ ___________________________________________
 	
-	struktura je klasicka pro vetsinu spring-boot aplikaci :)
+- struktura je klasicka pro vetsinu spring-boot aplikaci :)
